@@ -20,3 +20,21 @@ export function getPets () {
       })
   }
 }
+
+export function addPetAction(pet) {
+  console.log({pet});
+  return {
+    type: 'ADD_PET',
+    pet
+  }
+}
+
+export function postPet(pet) {
+  return dispatch => {
+    request
+      .post('/api/pets')
+      .send(pet)
+      .then(res => dispatch(addPetAction(res.body)))
+      .catch(err => console.log({err}))
+  }
+}

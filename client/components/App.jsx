@@ -5,6 +5,7 @@ import Pets from './Pets'
 import Pet from './Pet'
 import Species from './Species'
 import SingleSpecies from './SingleSpecies'
+import AddPet from './AddPet'
 
 import {connect} from 'react-redux'
 import {getPets} from '../actions/pets'
@@ -25,6 +26,7 @@ class App extends React.Component {
           <br />
           <Link to="/species">Species</Link>
         </div>
+        <AddPet />
         <Route exact path="/pets" component={Pets} />
         <Route exact path="/species" component={Species} />
         <Route exact path="/species/:id" component={SingleSpecies} />
