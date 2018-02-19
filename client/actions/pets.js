@@ -38,3 +38,19 @@ export function postPet(pet) {
       .catch(err => console.log({err}))
   }
 }
+
+export function deletePetAction(id) {
+  return {
+    type: 'DELETE_PET',
+    id
+  }
+}
+
+export function delPet(id) {
+  return dispatch => {
+    request
+      .delete('/api/pets/' + id)
+      .then(res => dispatch(deletePetAction(id)))
+      .catch(err => console.log((err)))
+  }
+}

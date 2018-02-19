@@ -40,4 +40,12 @@ server.post('/api/pets', (req, res) => {
     }) //has beeen added, sends id to client
 })
 
+server.delete('/api/pets/:pet_id', (req, res) => {
+  db('pets')
+    .where('id', req.params.pet_id)
+    .del()
+    .then(() => res.sendStatus(204))
+    .catch((err) => console.log(err))
+})
+
 module.exports = server

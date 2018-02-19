@@ -5,6 +5,8 @@ function pets (state = [], action) {
       return [...action.pets]
     case 'ADD_PET':
       return [...state, action.pet]
+    case 'DELETE_PET':
+      return [...state].filter(pet => pet.id != action.id)
     default:
       return state
   }
