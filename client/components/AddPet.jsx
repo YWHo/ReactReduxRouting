@@ -24,14 +24,17 @@ class AddPet extends Component {
   render() {
     const {name, species_id} = this.state
     const {species} = this.props
-    return <form onSubmit={this.onSubmit}>
-      <input onChange={this.onChange} type="text" name="name" value={name} />
-      <select onChange={this.onChange} name="species_id" selected={species_id}>
+    return <form className="form" onSubmit={this.onSubmit}>
+      <label className="control label is-large">
+        Pet Name
+        <input className="input is-large is-fullwidth is-success" onChange={this.onChange} type="text" name="name" value={name} />
+      </label>
+      <select className="select is-large is-fullwidth" onChange={this.onChange} name="species_id" selected={species_id}>
         {species.map(specimen =>
           <option value={specimen.id}>{specimen.name}</option>
         )}
       </select>
-      <input type="submit" />
+      <input className="button is-large is-fullwidth is-success" type="submit" />
     </form>
   }
 }
