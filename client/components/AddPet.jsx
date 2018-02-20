@@ -25,16 +25,18 @@ class AddPet extends Component {
     const {name, species_id} = this.state
     const {species} = this.props
     return <form className="form" onSubmit={this.onSubmit}>
-      <label className="control label is-large">
+      <label className="control label has-text-centered is-large">
         Pet Name
-        <input className="input is-large is-fullwidth is-success" onChange={this.onChange} type="text" name="name" value={name} />
+        <input className="input is-rounded is-large is-fullwidth is-success" onChange={this.onChange} type="text" name="name" value={name} />
       </label>
-      <select className="select is-large is-fullwidth" onChange={this.onChange} name="species_id" selected={species_id}>
-        {species.map(specimen =>
-          <option value={specimen.id}>{specimen.name}</option>
-        )}
-      </select>
-      <input className="button is-large is-fullwidth is-success" type="submit" />
+      <div className="select is-rounded is-large is-fullwidth">
+        <select className="" onChange={this.onChange} name="species_id" selected={species_id}>
+          {species.map(specimen =>
+            <option value={specimen.id}>{specimen.name}</option>
+          )}
+        </select>
+      </div>
+      <input className="button is-rounded is-large is-fullwidth is-success is-outlined" type="submit" />
     </form>
   }
 }
