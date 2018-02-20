@@ -6,6 +6,7 @@ import Pet from './Pet'
 import Species from './Species'
 import SingleSpecies from './SingleSpecies'
 import AddPet from './AddPet'
+import Cart from './Cart'
 
 import {connect} from 'react-redux'
 import {getPets} from '../actions/pets'
@@ -13,7 +14,6 @@ import {getSpecies} from '../actions/species'
 
 class App extends React.Component {
   componentDidMount() {
-    console.log("mount")
     this.props.dispatch(getPets())
     this.props.dispatch(getSpecies())
   }
@@ -38,7 +38,7 @@ class App extends React.Component {
             <AddPet />
           </div>
           <div className="column is-4 box">
-            <h1>CART HERE</h1>
+            <Cart />
           </div>
         </div>
       </div>
